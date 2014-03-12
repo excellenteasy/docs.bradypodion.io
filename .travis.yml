@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - '0.10'
+before_script:
+  - bower install
+after_success:
+  - grunt gh-pages
+notifications:
+  email: false
+  webhooks:
+    urls:
+      secure: "XXt1deuQcS2B6WE+7M0EWU/KQMnFEvqjblUdtkb9fhbTJJ8h4tK8VbUPVAaQNT0OpXgzrguZXvUbofQ+84N5XiWQPEiALb0JB7v30apO3vm86znBZ973d7CcerFPBc8JUWKfvr/xMWLzsx/fNoIoi6rGgW/x+yvsFiUpKcEOkxg="

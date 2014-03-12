@@ -50,7 +50,6 @@ module.exports = (grunt) ->
         user:
           name: 'bpBot'
           email: 'bot@bradypodion.io'
-        push: false
       src: '**/*'
 
 

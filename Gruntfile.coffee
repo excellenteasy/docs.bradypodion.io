@@ -39,7 +39,6 @@ module.exports = (grunt) ->
         dest: '<%=docs.path%>/'
         options:
           process: (content, srcpath) ->
-            console.log arguments
             grunt.template.process content
 
     'gh-pages':

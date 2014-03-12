@@ -6,6 +6,9 @@ before_script:
   - bower install
 after_success:
   - grunt gh-pages
+env:
+ global:
+ - secure: "QrLeoCTCyJjEShymxcPeHO8sm1Jk+RPPBdgQjsIth0HE3cRXQRlPSEPzepRpgVIeL0kkuD/rMQDajdBTiG8ojJW2lFWWh9qxjeGnrY5maWHSh+NwRxf1+v4V8OHgqzR1WTQPck/P5/F8xOwgBcgG9wC6v6cDoe7pJSKpXUYRs70="
 notifications:
   email: false
   webhooks:

@@ -11,6 +11,7 @@ module.exports = (grunt) ->
       version: grunt.file.readJSON('bower.json').dependencies.bradypodion
       docs: 'bower_components/bradypodion/docs'
       app: 'bower_components/bradypodion/modules'
+      token: process.env.GH_TOKEN
 
     clean:
       dist: '<%=docs.path%>'
@@ -50,6 +51,7 @@ module.exports = (grunt) ->
         user:
           name: 'bpBot'
           email: 'bot@bradypodion.io'
+        repo: 'https://<%=docs.token%>@github.com/excellenteasy/docs.bradypodion.io.git'
       src: '**/*'
 
 

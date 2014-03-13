@@ -22,7 +22,7 @@
     "grunt-contrib-copy": "^0.5.0",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-gh-pages": "^0.9.1",
-    "grunt-ngdocs": "^0.2.1",
+    "grunt-ngdocs": "git+https://github.com/excellenteasy/grunt-ngdocs.git",
     "load-grunt-tasks": "^0.4.0",
     "time-grunt": "^0.2.10"
   }

@@ -1,0 +1,19 @@
+<h1><code ng:non-bindable="">bpApp</code>
+<div><span class="hint">service in module <code ng:non-bindable="">bp.util</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="bp-util-bpapp-page"><p>Contains the Bradypodion configuration object, which is used internally for post-platform abstractions.
+The default is <code>{platform: &#39;ios&#39;}</code> and the only other valid value for <code>platform</code> currently is <code>&#39;android&#39;</code>.</p>
+<div class="alert alert-info">
+  At the moment this is only used to set the platform of the Bradypodion app,
+  but in future versions it will be more important as it may contain information about the device (tablet/phone) or the environment (web/native wrapper) etc.
+</div>
+
+<div class="alert">
+  The returned object is not just a copy, but a reference to the configuration object.
+  This means you can change it app-wide on runtime, but this may cause an inconsistent app state.
+  It&#39;s recommend to alter configuration with the <a href="#/api/bp.util.bpAppProvider#methods_setconfig">provider</a> method.
+</div></div></div>
+</div>

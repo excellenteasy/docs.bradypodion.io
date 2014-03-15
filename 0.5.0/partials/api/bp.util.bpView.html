@@ -1,0 +1,35 @@
+<h1><code ng:non-bindable="">bpView</code>
+<div><span class="hint">service in module <code ng:non-bindable="">bp.util</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="bp-util-bpview-page"><p>Service providing some helpers for views and states. Mainly used internally.</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_getdirection">getDirection(from, to)</h3>
+<div class="getdirection"><div class="bp-util-bpview-getdirection-page"><p>Determines the direction between two states based on URL conventions.</p>
+</div><h5 id="methods_getdirection_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>from</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-util-bpview-getdirection-page"><p>A state object</p>
+</div></td></tr><tr><td>to</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-util-bpview-getdirection-page"><p>A state object</p>
+</div></td></tr></tbody></table><h5 id="methods_getdirection_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">string | null</a></td><td><div class="bp-util-bpview-getdirection-page"><p>direction The transition direction (normal|reverse)</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_gettype">getType(from, to, direction)</h3>
+<div class="gettype"><div class="bp-util-bpview-gettype-page"><p>Determines the type of a transition.</p>
+</div><h5 id="methods_gettype_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>from</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-util-bpview-gettype-page"><p>A state object</p>
+</div></td></tr><tr><td>to</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-util-bpview-gettype-page"><p>A state object</p>
+</div></td></tr><tr><td>direction</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-util-bpview-gettype-page"><p>The transition direction (normal|reverse)</p>
+</div></td></tr></tbody></table><h5 id="methods_gettype_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-util-bpview-gettype-page"><p>type The transition type (cover|scale|slide)</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parsestate">parseState(ref, scope)</h3>
+<div class="parsestate"><div class="bp-util-bpview-parsestate-page"><pre><code class="lang-javascript">bpView.parse(&#39;customer({id: id})&#39;, scope)
+// {state: &#39;customer&#39;, params: {id: 5}}</code></pre>
+</div><h5 id="methods_parsestate_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>ref</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-util-bpview-parsestate-page"><p>The state reference with optional parameters.</p>
+</div></td></tr><tr><td>scope</td><td><a href="" class="label type-hint type-hint-scope">scope</a></td><td><div class="bp-util-bpview-parsestate-page"><p>The scope the params should be parsed against.</p>
+</div></td></tr></tbody></table><h5 id="methods_parsestate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="bp-util-bpview-parsestate-page"><p>Contains parsed <code>state</code> and <code>params</code>.</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

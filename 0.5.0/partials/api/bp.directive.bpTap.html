@@ -1,0 +1,41 @@
+<h1><code ng:non-bindable="">bpTap</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">bp</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="bp-directive-page bp-directive-bptap-page"><p><code>bpTap</code> is similiar to Angular&#39;s own <code>ngClick</code> directive,
+as it executes the provided expression, but without 300ms delay.</p>
+<p><code>bpBoundMargin</code> and <code>bpNoScroll</code> are automatically set based on context.</p>
+<p>Bradypodion doesn&#39;t rely on <code>ngTouch</code>&#39;s click directive,
+as this one provides fine grained control.</p>
+<div class="alert alert-info">
+  You may define default configuration for taps with the <a href="#/api/bp.util.bpTapProvider">provider</a>.
+</div></div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/bp.util.bpTap">bpTap</a></code>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY bp-tap="{expression}"
+     [bp-active-class="{string}"]
+     [bp-allow-click="{boolean}"]
+     [bp-bound-margin="{number}"]
+     [bp-no-scroll="{boolean}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>bpTap</td><td><a href="" class="label type-hint type-hint-expression">expression</a></td><td><div class="bp-directive-page bp-directive-bptap-page"><p>Expression to evaluate upon tap.</p>
+</div></td></tr><tr><td>bpActiveClass <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-directive-page bp-directive-bptap-page"><p>CSS class that is applied to the element during tap. (<code>bp-active</code>)</p>
+</div></td></tr><tr><td>bpAllowClick <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="bp-directive-page bp-directive-bptap-page"><p>Whether to allow the original click event or not. (<code>false</code>)</p>
+</div></td></tr><tr><td>bpBoundMargin <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="bp-directive-page bp-directive-bptap-page"><p>Threshold one is allowed to move the finger before the tap is cancelled. (50)</p>
+</div></td></tr><tr><td>bpNoScroll <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="bp-directive-page bp-directive-bptap-page"><p>Whether to allow scrolling during tap or not. (<code>false</code>)</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="bp-directive-page bp-directive-bptap-page"><pre class="prettyprint linenums">
+&lt;bp-toolbar&gt;
+  &lt;bp-action bp-tap="reload()"&gt;Reload&lt;/bp-action&gt;
+  &lt;bp-action bp-tap="openShareSheet()"&gt;Share&lt;/bp-action&gt;
+&lt;/bp-toolbar&gt;
+</pre>
+</div></div>
+</div>

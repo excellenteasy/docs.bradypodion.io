@@ -33,14 +33,16 @@ module.exports = (grunt) ->
         title: 'Documentation'
 
     copy:
-      assets:
-        expand: yes
-        cwd: '<%=docs.assets%>'
-        src: '*'
-        dest: '<%=docs.path%>/'
+      index:
+        files: '<%=docs.path%>/index.html': ['<%=docs.assets%>/index.html']
         options:
           process: (content, srcpath) ->
             grunt.template.process content
+      assets:
+        expand: yes
+        cwd: '<%=docs.assets%>'
+        src: '*/**/*'
+        dest: '<%=docs.path%>/<%=docs.version%>'
 
     'gh-pages':
       options:

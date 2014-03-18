@@ -1,0 +1,31 @@
+<h1><code ng:non-bindable="">bpSref</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">bp</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="bp-directive-page bp-directive-bpsref-page"><p><code>bpSref</code> is similiar to Angular UI Router&#39;s own <code>uiSref</code> directive,
+as it transitions to a state, but without 300ms delay.</p>
+<div class="alert alert-info">
+  The tap behavior may be changed with the same attriubutes as with <a href="#/api/bp.directive:bpTap"><code>bpTap</code></a>.
+</div></div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/bp.util.bpTap">bpTap</a></code>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY bp-sref="{string}"&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>bpSref</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-directive-page bp-directive-bpsref-page"><p>Name of the state to transition to. You can define params for the state like this:
+<code>statename({id: 1})</code>,</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="bp-directive-page bp-directive-bpsref-page"><pre class="prettyprint linenums">
+&lt;bp-navbar&gt;
+  &lt;bp-action bp-sref="customers"&gt;Overview&lt;/bp-action&gt;
+  &lt;bp-action bp-sref="customer({id: 4})"&gt;Detail&lt;/bp-action&gt;
+&lt;/bp-navbar&gt;
+</pre>
+</div></div>
+</div>

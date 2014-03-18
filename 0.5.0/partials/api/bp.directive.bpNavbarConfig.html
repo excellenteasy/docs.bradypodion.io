@@ -1,0 +1,30 @@
+<h1><code ng:non-bindable="">bpNavbarConfig</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">bp</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="bp-directive-page bp-directive-bpnavbarconfig-page"><p><code>bpNavbarConfig</code> is a way to configure navbars injected by the <a href="#/api/bp.directive:bpNavigation"><code>bpNavigation</code></a> directive.
+It offers exactly the <a href="#/api/bp.directive:bpNavbar#usage_parameters">same attributes</a> for configuration as the original navbar, and forwards them to it.
+If you put <code>bpAction</code>s into the directive they will be moved to the original navbar.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/bp.directive:bpNavigation">bpNavigation</a></code>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;bp-navbar-config
+       [bp-navbar-no-navbar="{boolean}"]&gt;
+&lt;/bp-navbar-config&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>bpNavbarNoNavbar <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="bp-directive-page bp-directive-bpnavbarconfig-page"><p>If you set this attribute no navbar will be rendered for this screen.</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="bp-directive-page bp-directive-bpnavbarconfig-page"><pre class="prettyprint linenums">
+&lt;bp-navbar-config bp-navbar-no-up&gt;
+  &lt;bp-action class="icon-checkmark"&gt;
+    Done
+  &lt;/bp-action&gt;
+&lt;/bp-navbar-config&gt;
+</pre>
+</div></div>
+</div>

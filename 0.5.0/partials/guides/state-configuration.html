@@ -1,0 +1,77 @@
+<h1><code ng:non-bindable=""></code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><div class="state-configuration-page"><h2 id="state-configuration">State Configuration</h2>
+<p>Bradypodion (short: bp) assumes that you are using <a href="https://github.com/angular-ui/ui-router">ui-router</a> to configure the states of your application. If you adhere to certain conventions explained in this document, bp can automate a lot of common use cases&#39; processes for you. We highly recommend sticking to these conventions.</p>
+<p>Let&#39;s start with an example to illustrate the different implications your state configuration has on your bp app.</p>
+<pre class="prettyprint linenums">
+angular.module('bradypodionApp', ['bp'])
+  .config(function($urlRouterProvider, $stateProvider) {
+    $urlRouterProvider.otherwise('/');
+    $stateProvider.state('customers', {
+      url: '/',
+      templateUrl: 'customers.html'
+    });
+  });
+</pre>
+<p>The above code instantiates a new angular app with bp as a dependency and immediately configures the app. If you have used ui-router before, you might be familar with <code>$urlRouterProvider</code> and <code>$stateProvider</code>, as well as the <code>url</code> and <code>templateUrl</code> properties. However, the values have additional meaning in bp.</p>
+<h3 id="state-configuration_state-names">State names</h3>
+<p>The current state&#39;s name is used as the default title for <a href="#/api/bp.directive:bpNavbar">bp-navbar</a>, if no <code>bp-navbar-title</code> attribute is set.
+With the example configuration above, the navbar title would be &quot;Customers&quot;.</p>
+<h3 id="state-configuration_state-data">State data</h3>
+<h4 id="state-configuration_state-data_title">title</h4>
+<p>If we did not want the state name to be useed for the navbar title, but we also did not want to change a template to set the title using bp-navbar-title attribute, we would need to use the state data object&#39;s title attribute:</p>
+<pre class="prettyprint linenums">
+$stateProvider.state('customers', {
+  url: '/',
+  templateUrl: 'customers.html',
+  data: {
+    title: 'My Customers'
+  }
+});
+</pre>
+<h4 id="state-configuration_state-data_up">up</h4>
+<p>The up property allows you to explicitly define – by state name – which state should be considered the hierachical parent of this state. If set, the navbar renders an up button which points to the defined state. There are cases where you don&#39;t need this property, because the up state is detected automatically using the states&#39; urls (see below).</p>
+<h4 id="state-configuration_state-data_modal">modal</h4>
+<p>The modal property (Boolean) is a semantically more correct way to define the state to be transitioned using the cover transition.</p>
+<div class="alert alert-info">The modal property might have further implications in the future, so we recommend you use it instead of simply forcing the transition.</div>
+
+<h4 id="state-configuration_state-data_transition">transition</h4>
+<p>The data object can also be used to define the transition that is used when navigating to this state.</p>
+<pre class="prettyprint linenums">
+$stateProvider.state('customers', {
+  url: '/',
+  templateUrl: 'customers.html'
+}).state('customer', {
+  url: '/customer',
+  templateUrl: 'customer.html',
+  data: {
+    transition: 'cover'
+  }
+});
+</pre>
+<p>When navigating to the customer state, the cover transition would be used. If not explicitly set on the data object, the transition type is automatically determined depending on the platform. On iOS we use &quot;slide&quot; and on Android &quot;cover&quot; is the default transition.</p>
+<h3 id="state-configuration_state-url">State URL</h3>
+<p>While the transition type is determined automatically, the direction of the transition needs to be determined somehow as well. If the <code>url</code> property is used correctly, bp can do this for you.</p>
+<pre class="prettyprint linenums">
+$stateProvider.state('customers', {
+  url: '/',
+  templateUrl: 'customers.html'
+}).state('customer', {
+  url: '/customer',
+  templateUrl: 'customer.html'
+});
+</pre>
+<p>In this example, bp would know to transition towards the customer state when coming from the customer<strong>s</strong> state. It would transition in the reverse direction, when navigating &quot;up&quot; from the customer state towards the customer<strong>s</strong> state. This detection works by comparing the URL segments and testing if they match (but the last one). If that is the case, we can detect the direction. This is not possible if you don&#39;t adhere to this convention, however:</p>
+<pre class="prettyprint linenums">
+$stateProvider.state('customers', {
+  url: '/customers',
+  templateUrl: 'customers.html'
+}).state('customer', {
+  url: '/detail/customer',
+  templateUrl: 'customer.html'
+});
+</pre>
+<p>Eventhough one state&#39;s URL has one and the other has two segments, bp cannot determine the direction here, because the states&#39; URLs don&#39;t have a common &quot;parent&quot;.</p>
+</div></div>

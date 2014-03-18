@@ -21,7 +21,7 @@ module.exports = (grunt) ->
         dest: '<%=docs.path%>/<%=docs.version%>/'
         title: 'Bradypodion'
         titleLink: 'http://bradypodion.io/'
-        startPage: 'api'
+        startPage: 'guides'
         navTemplate: '<%=docs.docs%>/navigation.html'
         html5Mode: off
         bestMatch: on

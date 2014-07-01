@@ -5,6 +5,19 @@ module.exports = (grunt) ->
   require('time-grunt') grunt
 
   grunt.initConfig
+    connect: {
+      options: {
+        hostname: '*',
+        open: true,
+        base: 'dist'
+      },
+      livereload: {
+        options: {
+          livereload: true
+        }
+      }
+    },
+
     docs:
       assets: 'assets'
       path: 'dist'
@@ -61,4 +74,9 @@ module.exports = (grunt) ->
     'clean'
     'ngdocs'
     'copy'
+  ]
+
+  grunt.registerTask 'serve', [
+    'default'
+    'connect:livereload:keepalive'
   ]

@@ -1,3 +1,7 @@
+.content .img {
+  max-width: 100%;
+}
+
 img.AngularJS-small {
   width: 95px;
   height: 25px;

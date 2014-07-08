@@ -1,0 +1,39 @@
+<h1><code ng:non-bindable="">bpTab</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">bp</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="bp-directive-page bp-directive-bptab-page"><p>A tab within a  <a href="#/api/bp.directive:bpTabbar"><code>bpTabbar</code></a>.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/bp.util.bpView">bpView</a></code>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;bp-tab
+       ui-sref="{string}"
+       bp-tab-icon="{string}"
+       [bp-tab-title="{string}"]&gt;
+&lt;/bp-tab&gt;</pre>
+<h3 id="usage_directive-info">Directive info</h3>
+<div class="directive-info"><ul><li>This directive creates new scope.</li>
+<li>This directive executes at priority level 100.</li>
+</ul>
+</div>
+<h4 id="usage_directive-info_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>uiSref</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-directive-page bp-directive-bptab-page"><p>The name of the state the tab is associated to.</p>
+</div></td></tr><tr><td>bpTabIcon</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-directive-page bp-directive-bptab-page"><p>A CSS class that represents a font-icon for the tab.</p>
+</div></td></tr><tr><td>bpTabTitle <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-directive-page bp-directive-bptab-page"><p>The title of the tab. By default it&#39;s read from the associated state.</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="bp-directive-page bp-directive-bptab-page"><pre class="prettyprint linenums">
+&lt;bp-tabbar&gt;
+  &lt;bp-tab ui-sref='first'  bp-tab-icon="icon-bookmark"&gt;&lt;/bp-tab&gt;
+  &lt;bp-tab ui-sref='second' bp-tab-icon="icon-comment"&gt;&lt;/bp-tab&gt;
+  &lt;bp-tab ui-sref='third'  bp-tab-icon="icon-download"&gt;&lt;/bp-tab&gt;
+  &lt;bp-tab ui-sref='fourth' bp-tab-icon="icon-inbox"&gt;&lt;/bp-tab&gt;
+  &lt;bp-tab ui-sref='fifth'  bp-tab-icon="icon-music"&gt;&lt;/bp-tab&gt;
+&lt;/bp-tabbar&gt;
+</pre>
+</div></div>
+</div>

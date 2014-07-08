@@ -23,7 +23,7 @@ module.exports = (grunt) ->
       path: 'dist'
       version: grunt.file.readJSON('bower.json').dependencies.bradypodion
       docs: 'bower_components/bradypodion/docs'
-      app: 'bower_components/bradypodion/modules'
+      app: 'bower_components/bradypodion/src'
       token: process.env.GH_TOKEN
 
     clean:

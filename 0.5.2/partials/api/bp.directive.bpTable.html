@@ -1,0 +1,47 @@
+<h1><code ng:non-bindable="">bpTable</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">bp</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="bp-directive-page bp-directive-bptable-page"><p><code>bpTable</code> is an universal interface element used to represent (huge) datasets in lists.</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;bp-table&gt;
+&lt;/bp-table&gt;</pre>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="bp-directive-page bp-directive-bptable-page"><h4 id="example_plain-table">Plain Table</h4>
+<pre class="prettyprint linenums">
+&lt;bp-table&gt;
+  &lt;bp-table-header&gt;Header&lt;/bp-table-header&gt;
+  &lt;bp-cell&gt;Content&lt;/bp-cell&gt;
+  &lt;bp-cell&gt;Content&lt;/bp-cell&gt;
+  &lt;bp-cell&gt;Content&lt;/bp-cell&gt;
+  &lt;bp-cell&gt;Content&lt;/bp-cell&gt;
+&lt;/bp-table&gt;
+</pre>
+<h4 id="example_grouped-table">Grouped Table</h4>
+<pre class="prettyprint linenums">
+&lt;bp-table class="bp-table-grouped"&gt;
+  &lt;bp-table-grouped-header&gt;Header&lt;/bp-table-grouped-header&gt;
+  &lt;bp-table&gt;
+    &lt;bp-cell&gt;Content&lt;/bp-cell&gt;
+    &lt;bp-cell&gt;Content&lt;/bp-cell&gt;
+    &lt;bp-cell&gt;Content&lt;/bp-cell&gt;
+    &lt;bp-cell&gt;Content&lt;/bp-cell&gt;
+  &lt;/bp-table&gt;
+  &lt;bp-table-grouped-footer&gt;Footer&lt;/bp-table-grouped-footer&gt;
+&lt;/bp-table&gt;
+</pre>
+<h4 id="example_together-with-search-&amp;-scroll">Together with Search &amp; Scroll</h4>
+<pre class="prettyprint linenums">
+&lt;bp-search&gt;
+  &lt;input ng-model="search"&gt;
+&lt;/bp-search&gt;
+&lt;bp-table bp-scroll&gt;
+  &lt;bp-cell ng-repeat="cell in cells | filter:search"&gt;{{ data }}&lt;/bp-cell&gt;
+&lt;/bp-table&gt;
+</pre>
+</div></div>
+</div>

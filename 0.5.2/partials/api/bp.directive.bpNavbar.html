@@ -1,0 +1,65 @@
+<h1><code ng:non-bindable="">bpNavbar</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">bp</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="bp-directive-page bp-directive-bpnavbar-page"><p><code>bpNavbar</code> is the beating heart of Bradypodion as it provides the structure for your application.</p>
+<p>The navbar tries to fill itself with the right information based on the context of the current state.</p>
+<div class="alert alert-info">
+  The <a href="#/api/bp.directive:bpNavigation"><code>bpNavigation</code></a> directive offers a convenient way to inject navbars in all of your screens automatically.
+</div>
+
+<h4 id="description_title">Title</h4>
+<p>Based on <a href="http://angular-ui.github.io/ui-router/site/#/api/ui.router.state.$state">ui.router&#39;s</a>
+<code>$state.current</code> the <code>bp-navbar-title</code> is filled with <code>state.data.title</code> or <code>state.name</code> (First letter capitalized).</p>
+<p>If you want to define a custom Title for the navbar just assign any string to the <code>bp-navbar-title</code> attribute.
+If you don’t want any title at all just assign an empty string.</p>
+<h4 id="description_up-button">Up Button</h4>
+<div class="alert alert-info">
+  &quot;Up&quot; Button should be more familiar to iOS developers as &quot;Back&quot; button,
+  but it&#39;s named &quot;Up&quot; throughout the framework to maintain a consistent and semantically correct naming for all platforms.
+</div>
+
+<p>The navbar automatically injects an up button for you. The state information is either taken directly from <code>$state.data.up</code> or read from the URL of the state.
+If the URL of the current state is <code>/customers/:id</code> and <code>customers</code> is a valid state name then this will be the up button&#39;s target.
+The up button&#39;s label is determined in the same way as the navbar&#39;s title.</p>
+<h4 id="description_actions">Actions</h4>
+<p><a href="#/api/bp.directive:bpAction"><code>bpAction</code></a>s are (currently) the only supported content within a navbar.
+They are automatically processed to be icons on android and buttons on ios.
+You can however force an action to be an icon on ios by adding the <code>bp-icon</code> CSS class.</p>
+<h5 id="description_actions_action-overflow">Action Overflow</h5>
+<p>The navbar offers space for two actions on both ios and android.
+If you define more than those two actions on ios the navbar will automatically spawn a <a href="#/api/bp.directive:bpToolbar"><code>bpToolbar</code></a> for you.
+On android it will create a <a href="#/api/bp.directive:bpActionOverflow"><code>bpActionOverflow</code></a> menu for you.</p>
+<div class="alert">
+  On ios the injected up button counts against the action limit.
+  So in most cases, unless you decide to set <code>bp-navbar-no-up</code> to true, there is space for one action.
+</div></div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/bp.util.bpApp">bpApp</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/bp.util.bpView">bpView</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/bp.directive:bpToolbar">bpToolbar</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/bp.directive:bpActionOverflow">bpActionOverflow</a></code>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;bp-navbar
+       [bp-navbar-no-up="{boolean}"]
+       [bp-navbar-title="{string}"]&gt;
+&lt;/bp-navbar&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>bp-navbar-no-up <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-boolean">boolean</a></td><td><div class="bp-directive-page bp-directive-bpnavbar-page"><p>Don&#39;t show the default up button from the state (false).</p>
+</div></td></tr><tr><td>bp-navbar-title <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="bp-directive-page bp-directive-bpnavbar-page"><p>The title of the navbar. Defaults to the current state&#39;s title.</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="bp-directive-page bp-directive-bpnavbar-page"><pre class="prettyprint linenums">
+&lt;bp-navbar bp-navbar-title="Hello World" bp-navbar-no-up&gt;
+  &lt;bp-action class="icon-cross"&gt;Cancel&lt;/bp-action&gt;
+  &lt;bp-action class="icon-checkmark"&gt;Save&lt;/bp-action&gt;
+&lt;/bp-navbar&gt;
+</pre>
+</div></div>
+</div>
